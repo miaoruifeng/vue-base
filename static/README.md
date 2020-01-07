@@ -5,19 +5,25 @@
 ### 安装
 
 - **不支持** IE8 及以下版本
-- 更新日志
-  [更新日志]: https://github.com/vuejs/vue/releases
 
+- 更新日志
+  
+https://github.com/vuejs/vue/releases
+  
 - 安装方式有多种：
 
   + `<script>` 标签引入
+  
   + 通过 `npm` 安装
+  
     ```shell
     # 默认安装最新稳定版
     $ npm install vue
     ```
-  + 其它方式详见：
-    [官网]: https://cn.vuejs.org/v2/guide/installation.html
+    
+  + 其它方式详见官网：
+    
+    https://cn.vuejs.org/v2/guide/installation.html
 
 ### 介绍
 
@@ -33,6 +39,9 @@
   + Model
   + View
   + ViewModel
+
+  ![MVVM图示]('/images/MVVM.png')
+
 - 数据驱动视图（data driven view）
 - 面向数据
 
@@ -63,7 +72,7 @@
 
 #### 发展历史
 
-[更新日志]: https://github.com/vuejs/vue/releases
+https://github.com/vuejs/vue/releases
 
 - Vue.js 由尤雨溪个人正式发布于 2014 年 2 月，并开源于 Github
 - 2015 年 10 月 27 日，正式发布 1.0
@@ -72,9 +81,33 @@
 
 #### 对比其他框架
 
-[对比其他框架]: https://cn.vuejs.org/v2/guide/comparison.html
+  https://cn.vuejs.org/v2/guide/comparison.html
 
 ### Vue 实例
 
+- 创建实例
+  + new Vue()
+- 实例选项
+  + el 挂载元素
+  + data 数据
+  + methods 方法
+  + 生命周期钩子（详见后面生命周期钩子）
+  + 。。。
+  
+  ![Vue生命周期图示]('/images/lifecycle.png')
 
+- 实例数据 data
+  + 响应式数据
+  + 注意事项：
+    * 只有 data 里被代理的属性是响应的，也就是说，值的任何改变都会触发视图的重新渲染
+    * 如果实例创建之后添加新的属性到实例上，它不会触发视图更新
+    * 也就是说，视图需要的数据必须在初始化实例时就定义，否则 vue 会发出警告
+- 实例方法 methods
+  + methods 中的方法不能使用箭头函数，否则绑定的是 window
+  + 不能与属性同名
+  + 事件绑定不需要调用，传参需要调用
+  + ES6 为对象成员提供了一种简写的方法：
 
+    ```javascript
+    // eg: handleClick () {}  <=>  handleClick: function() {}  （前者是后者的简写）
+    ```
