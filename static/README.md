@@ -91,87 +91,90 @@
 ### Vue 实例
 
 - 创建实例
+
 - 实例选项
   + el 挂载元素
   + data 数据
   + methods 方法
   + 生命周期钩子（详见后面生命周期钩子）
   + ...
+  
 - 实例数据 data
   + 响应式数据
   + 注意事项：
     * 只有 data 里被代理的属性是响应的，也就是说，值的任何改变都会触发视图的重新渲染
     * 如果实例创建之后添加新的属性到实例上，它不会触发视图更新
     * 也就是说，视图需要的数据必须在初始化实例时就定义，否则 vue 会发出警告
+  
 - 实例方法 methods
   + methods 中的方法不能使用箭头函数，否则绑定的是 window
   + 不能与属性同名
   + 事件绑定不需要调用，传参需要调用
   + ES6 为对象成员提供了一种简写的方法：
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="app">
-      <h1>{{ message }}</h1>
-      <button @click="handleClick">Click</button>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-    <script>
-      const app = new Vue({
-      data: {
-        message: 'Hello World!'
-      },
-      methods: {
-        // handleClick () {}  <=>  handleClick: function() {}  （前者是后者的简写）
-        handleClick () {
-          console.log('hello vue.js!')
-        }
-      },
-      // 生命周期钩子
-      beforeCreate () {
-        console.log('beforeCreate')
-      },
-      created () {
-        console.log('created')
-      },
-      beforeMount () {
-        console.log('beforeMount')
-      },
-      mounted () {
-        console.log('mounted')
-      },
-      beforeUpdate () {
-        console.log('beforeUpdate')
-      },
-      updated () {
-        console.log('updated')
-      },
-      activated () {
-        console.log('activated')
-      },
-      deactivated () {
-        console.log('deactivated')
-      },
-      beforeDestroy () {
-        console.log('beforeDestroy')
-      },
-      destroyed () {
-        console.log('destroyed')
-      },
-      errorCaptured () {
-        console.log('errorCaptured')
-      },
-      }).$mount('#app')
-    </script>
-  </body>
-</html>
-```
+  
+  ```html
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Document</title>
+    </head>
+    <body>
+      <div id="app">
+        <h1>{{ message }}</h1>
+        <button @click="handleClick">Click</button>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+      <script>
+        const app = new Vue({
+        data: {
+          message: 'Hello World!'
+        },
+        methods: {
+          // handleClick () {}  <=>  handleClick: function() {}  （前者是后者的简写）
+          handleClick () {
+            console.log('hello vue.js!')
+          }
+        },
+        // 生命周期钩子
+        beforeCreate () {
+          console.log('beforeCreate')
+        },
+        created () {
+          console.log('created')
+        },
+        beforeMount () {
+          console.log('beforeMount')
+        },
+        mounted () {
+          console.log('mounted')
+        },
+        beforeUpdate () {
+          console.log('beforeUpdate')
+        },
+        updated () {
+          console.log('updated')
+        },
+        activated () {
+          console.log('activated')
+        },
+        deactivated () {
+          console.log('deactivated')
+        },
+        beforeDestroy () {
+          console.log('beforeDestroy')
+        },
+        destroyed () {
+          console.log('destroyed')
+        },
+        errorCaptured () {
+          console.log('errorCaptured')
+        },
+        }).$mount('#app')
+      </script>
+    </body>
+  </html>
+  ```
 
 ### 数据绑定
 
