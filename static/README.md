@@ -7,22 +7,22 @@
 - **不支持** IE8 及以下版本
 
 - 更新日志
-  
-https://github.com/vuejs/vue/releases
-  
+
+  https://github.com/vuejs/vue/releases
+
 - 安装方式有多种：
 
   + `<script>` 标签引入
-  
+
   + 通过 `npm` 安装
-  
+
     ```shell
     # 默认安装最新稳定版
     $ npm install vue
     ```
-    
+
   + 其它方式详见官网：
-    
+
     https://cn.vuejs.org/v2/guide/installation.html
 
 ### 介绍
@@ -36,16 +36,21 @@ https://github.com/vuejs/vue/releases
 #### Vue 特点
 
 - MVVM
+
   + Model
+
   + View
+
   + ViewModel
 
-  ![MVVM图示]('/images/MVVM.png')
+    ! [MVVM 图示](./images/MVVM.png)
 
 - 数据驱动视图（data driven view）
+
 - 面向数据
 
 - 组件化
+
   + 组件由 HTML、CSS、JavaScript 构成
 
 #### Vue 的优缺点
@@ -72,7 +77,7 @@ https://github.com/vuejs/vue/releases
 
 #### 发展历史
 
-https://github.com/vuejs/vue/releases
+​	https://github.com/vuejs/vue/releases
 
 - Vue.js 由尤雨溪个人正式发布于 2014 年 2 月，并开源于 Github
 - 2015 年 10 月 27 日，正式发布 1.0
@@ -81,21 +86,17 @@ https://github.com/vuejs/vue/releases
 
 #### 对比其他框架
 
-  https://cn.vuejs.org/v2/guide/comparison.html
+​	https://cn.vuejs.org/v2/guide/comparison.html
 
 ### Vue 实例
 
 - 创建实例
-  + new Vue()
 - 实例选项
   + el 挂载元素
   + data 数据
   + methods 方法
   + 生命周期钩子（详见后面生命周期钩子）
-  + 。。。
-  
-  ![Vue生命周期图示]('/images/lifecycle.png')
-
+  + ...
 - 实例数据 data
   + 响应式数据
   + 注意事项：
@@ -108,6 +109,73 @@ https://github.com/vuejs/vue/releases
   + 事件绑定不需要调用，传参需要调用
   + ES6 为对象成员提供了一种简写的方法：
 
-    ```javascript
-    // eg: handleClick () {}  <=>  handleClick: function() {}  （前者是后者的简写）
-    ```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <button @click="handleClick">Click</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+      const app = new Vue({
+      data: {
+        message: 'Hello World!'
+      },
+      methods: {
+        // handleClick () {}  <=>  handleClick: function() {}  （前者是后者的简写）
+        handleClick () {
+          console.log('hello vue.js!')
+        }
+      },
+      // 生命周期钩子
+      beforeCreate () {
+        console.log('beforeCreate')
+      },
+      created () {
+        console.log('created')
+      },
+      beforeMount () {
+        console.log('beforeMount')
+      },
+      mounted () {
+        console.log('mounted')
+      },
+      beforeUpdate () {
+        console.log('beforeUpdate')
+      },
+      updated () {
+        console.log('updated')
+      },
+      activated () {
+        console.log('activated')
+      },
+      deactivated () {
+        console.log('deactivated')
+      },
+      beforeDestroy () {
+        console.log('beforeDestroy')
+      },
+      destroyed () {
+        console.log('destroyed')
+      },
+      errorCaptured () {
+        console.log('errorCaptured')
+      },
+      }).$mount('#app')
+    </script>
+  </body>
+</html>
+```
+
+### 数据绑定
+
+### 指令
+
+
+
