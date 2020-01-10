@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <a v-bind:[attibutehref]="'http://baidu.com'">这是一个 a 链接</a>
+      <br>
+      <button @[eventname]="handleClick">Button</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+      const app = new Vue({
+        data: {
+          message: 'Hello World!',
+          attibutehref: 'href',
+          eventname: 'click'
+        },
+        methods: {
+          handleClick() {
+            window.alert('11111')
+          }
+        }
+      }).$mount('#app')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+
+      <!-- .lazy -->
+      <input type="text" v-model.lazy="message">
+      <br>
+
+      <!-- .number -->
+      <h3>{{ age + 1 }}</h3>
+      <input type="number" v-model.number="age">
+
+      <!-- .trim -->
+      <h2>{{ msgtrim }}</h2>
+      <input type="text" v-model.trim="msgtrim">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+      const app = new Vue({
+        data: {
+          message: 'Hello World!',
+          age: 18,
+          msgtrim: 'hello vue.js'
+        },
+        methods: {}
+      }).$mount('#app')
+    </script>
+  </body>
+</html>

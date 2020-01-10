@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+
+      <!-- 单行文本 -->
+      <input type="text" v-model="message" @input="handleInputText">
+      <p>Message is: {{ message }}</p>
+      <hr>
+
+      <!-- 多行文本 -->
+      <textarea v-model="textareaInfo" @input="handleTextarea" cols="30" rows="10"></textarea>
+      <p>TextareaInfo is: {{ textareaInfo }}</p>
+      <hr>
+
+      <!-- 单个复选框 绑定到布尔值 -->
+      <input type="checkbox" id="checkbox" v-model="checked" @change="handleInputCheckbox">
+      <label for="checkbox">{{ checked }}</label>
+      <hr>
+
+      <!-- 多个复选框 绑定到同一个数组 -->
+      <div>
+        <input type="checkbox" id="vue" value="Vue" v-model="checkedNames">
+        <label for="vue">Vue</label>
+        <input type="checkbox" id="react" value="React" v-model="checkedNames">
+        <label for="react">React</label>
+        <input type="checkbox" id="angular" value="Angular" v-model="checkedNames">
+        <label for="angular">Angular</label>
+        <p>Checked Names: {{ checkedNames }}</p>
+      </div>
+      <hr>
+
+      <!-- 单选按钮 -->
+      <div>
+        <input type="radio" id="vue" value="Vue" v-model="picked">
+        <label for="vue">Vue</label>
+        <input type="radio" id="react" value="React" v-model="picked">
+        <label for="react">React</label>
+        <input type="radio" id="angular" value="Angular" v-model="picked">
+        <label for="angular">Angular</label>
+        <p>Picked: {{ picked }}</p>
+      </div>
+      <hr>
+
+      <!-- 选择框 -->
+      <div>
+        <select v-model="selected">
+          <option value="" disabled>请选择</option>
+          <option>Vue</option>
+          <option>React</option>
+          <option>Angular</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+      </div>
+      <hr>
+
+      <!-- 单选按钮 值绑定 -->
+      <div>
+        <input type="radio" v-model="pickedValue" value="abc">
+      </div>
+      <hr>
+
+      <!-- 复选框 值绑定 -->
+      <div>
+        <input type="checkbox" v-model="toggle">
+      </div>
+      <hr>
+
+      <!-- 选择框 value绑定 -->
+      <div>
+        <select v-model="selectedValue">
+          <option value="" disabled>请选择</option>
+          <option value="vue">Vue</option>
+          <option value="react">React</option value="vue">
+          <option value="angular">Angular</option value="vue">
+        </select>
+        <span>SelectedValue: {{ selectedValue }}</span>
+      </div>
+      <hr>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+      const app = new Vue({
+        data: {
+          message: 'Hello World!',
+          textareaInfo: '这是一个多行文本...',
+          checked: false,
+          checkedNames: [],
+          picked: '',
+          selected: '',
+          pickedValue: '',
+          toggle: true,
+          selectedValue: 'react'
+        },
+        methods: {
+          handleInputText() {
+            console.log('input-text')
+          },
+          handleTextarea() {
+            console.log('textarea')
+          },
+          handleInputCheckbox() {
+            console.log(this.checked)
+          }
+        }
+      }).$mount('#app')
+    </script>
+  </body>
+</html>

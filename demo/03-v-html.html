@@ -7,12 +7,15 @@
   <body>
     <div id="app">
       <h1>{{ message }}</h1>
+      <p>{{ rawHtml }}</p>
+      <p v-html="rawHtml"></p>
     </div>
-    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script>
       const app = new Vue({
         data: {
-          message: 'Hello World!'
+          message: 'Hello World!',
+          rawHtml: '<span>hello vue.js</span>'
         },
         methods: {}
       }).$mount('#app')

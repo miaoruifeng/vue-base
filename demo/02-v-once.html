@@ -7,12 +7,15 @@
   <body>
     <div id="app">
       <h1>{{ message }}</h1>
+      <!-- 一次性插值 -->
+      <h2 v-once>{{ msg }}</h2>
     </div>
     <script src="../node_modules/vue/dist/vue.js"></script>
     <script>
       const app = new Vue({
         data: {
-          message: 'Hello World!'
+          message: 'Hello World!',
+          msg: 'hello vue.js'
         },
         methods: {}
       }).$mount('#app')

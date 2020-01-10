@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <button @click="handleToggleClick">Toggle</button>
+      <h1 v-show="isShow">{{ message }}</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+      const app = new Vue({
+        data: {
+          message: 'Hello World!',
+          isShow: true
+        },
+        methods: {
+          handleToggleClick() {
+            return this.isShow = !this.isShow
+          }
+        }
+      }).$mount('#app')
+    </script>
+  </body>
+
+</html>

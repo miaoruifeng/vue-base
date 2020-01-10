@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+
+      <ul>
+        <li v-for="item in list">
+          {{ item.id }} - {{ item.name }} - {{ item.age }} - {{ item.gender }}
+        </li>
+      </ul>
+
+      <!-- 可以有第二个参数 -->
+      <ul>
+        <li v-for="(item, index) in list">
+          {{ index }} - {{ item.name }} - {{ item.age }} - {{ item.gender }}
+        </li>
+      </ul>
+
+      <ul>
+        <li v-for="(value, key) in obj">
+          {{ key }} - {{ value }}
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+      const app = new Vue({
+        data: {
+          message: 'Hello World!',
+          list: [
+            {
+              id: 1,
+              name: 'Jack',
+              age: 18,
+              gender: '男'
+            },
+            {
+              id: 2,
+              name: 'Rose',
+              age: 18,
+              gender: '女'
+            },
+            {
+              id: 3,
+              name: 'Lilei',
+              age: 18,
+              gender: '男'
+            }
+          ],
+          obj: {
+            name: 'Jack Ma',
+            age: 18,
+          }
+        },
+        methods: {}
+      }).$mount('#app')
+    </script>
+  </body>
+
+</html>

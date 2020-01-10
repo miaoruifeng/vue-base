@@ -3,10 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
       <h1>{{ message }}</h1>
+      <div v-cloak>
+        <p>{{ message }}</p>
+        <p>{{ message }}</p>
+        <p>{{ message }}</p>
+        <p>{{ message }}</p>
+        <p>{{ message }}</p>
+      </div>
     </div>
     <script src="../node_modules/vue/dist/vue.js"></script>
     <script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-if="isShow">{{ message }}</h1>
+
+      <p v-if="seen">我是第一个元素</p>
+      <p v-else>我是第二个元素</p>
+
+      <p v-if="type==='A'">我是 A</p>
+      <p v-else-if="type==='B'">我是 B</p>
+      <p v-else-if="type==='C'">我是 C</p>
+      <p v-else>我是 D</p>
+
+      <template v-if="seen">
+        <h1>标题一</h1>
+        <h2>标题二</h2>
+        <h3>标题三</h3>
+      </template>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+      const app = new Vue({
+        data: {
+          message: 'Hello World!',
+          isShow: true,
+          seen: true,
+          type: 'A'
+        },
+        methods: {}
+      }).$mount('#app')
+    </script>
+  </body>
+</html>

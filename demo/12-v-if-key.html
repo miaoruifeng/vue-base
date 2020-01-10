@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <tempalte v-if="toggle">
+        <label for="">账号</label>
+        <input type="text" placeholder="请输入用账号" key="username">
+      </tempalte>
+      <tempalte v-else>
+        <label for="">邮箱</label>
+        <input type="text" placeholder="请输入用邮箱" key="email">
+      </tempalte>
+      <button @click="app.toggle = !app.toggle">点击切换</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+      const app = new Vue({
+        data: {
+          message: 'Hello World!',
+          toggle: true,
+          type: 'username'
+        },
+        methods: {}
+      }).$mount('#app')
+    </script>
+  </body>
+</html>

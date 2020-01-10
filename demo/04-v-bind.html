@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ '这是一个JavaScript表达式绑定数据：' + message }}</h1>
+      <h1 v-bind:title="'这是'+ message">{{ message }}</h1>
+      <button :disabled="isDisabled">Button</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+      const app = new Vue({
+        data: {
+          message: 'Hello World!',
+          isDisabled: true
+        },
+        methods: {}
+      }).$mount('#app')
+    </script>
+  </body>
+</html>
