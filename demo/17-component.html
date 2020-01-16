@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <child :title="title" @click="alert('click me')"></child>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+
+      Vue.component('child', {
+        props: ['title'],
+        data() {
+          return {
+            msg: 'hello vue.js'
+          }
+        },
+        template: `
+          <div>
+            <h2>{{ msg }} -- {{ title }}</h2>
+            <button @click="$emit('click')">Click Me</button>
+          </div>
+        `
+      })
+
+      const app = new Vue({
+        data: {
+          message: 'Hello World!',
+          title: 'This is title'
+        },
+        methods: {}
+      }).$mount('#app')
+    </script>
+  </body>
+
+</html>

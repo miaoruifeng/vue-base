@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <child>
+        这是一个插槽内容
+      </child>
+
+      <child1></child1>
+
+      <ul>
+        <my-component></my-component>
+        <li>哈哈</li>
+        <li is="my-component"></li>
+      </ul>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+
+      Vue.component('my-component', {
+        data() {
+          return {
+            msg: '这是一个 li 标签'
+          }
+        },
+        template: '<div>{{ msg }}</div>'
+      })
+
+      Vue.component('child', {
+        data() {
+          return {
+            msg: 'hello vue.js'
+          }
+        },
+        template: `
+          <div>
+            <h2>{{ msg }}</h2>
+            <slot></slot>
+          </div>
+        `
+      })
+
+      var child1 = {
+        template: '<h3>这是一个局部注册组件</h3>'
+      }
+
+      const app = new Vue({
+        data: {
+          message: 'Hello World!'
+        },
+        components: {
+          child1
+        },
+        methods: {}
+      }).$mount('#app')
+    </script>
+  </body>
+
+</html>
